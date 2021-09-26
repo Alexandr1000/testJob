@@ -1,24 +1,41 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from "react";
+
 
 
 
 const myPromise = new Promise((resolve, reject) => {
 
     setTimeout(() => {
-        resolve("result");
+        resolve("hello world");
     }, 3000);
 
 });
 
-promise 
-    .then(result => {"hello world"}),
-    error => false
-
-
-
 
 
 export function MyComp() {
+    const animals = [
+        { id: 1, animal: "Dog" },
+        { id: 2, animal: "Bird" },
+        { id: 3, animal: "Cat" },
+        { id: 4, animal: "Mouse" },
+        { id: 5, animal: "Horse" },
+        { id: 6, animal: "Dog" },
+        { id: 7, animal: "Bird" },
+        { id: 8, animal: "Cat" },
+        { id: 9, animal: "Mouse" },
+        { id: 10, animal: "Dog" },
+        { id: 11, animal: "Bird" },
+        { id: 12, animal: "Cat" },
+        { id: 13, animal: "Mouse" },
+        { id: 14, animal: "Dog" },
+        { id: 15, animal: "Bird" },
+        { id: 16, animal: "Cat" },
+        { id: 17, animal: "Mouse" },
+        { id: 18, animal: "Mouse2" },
+        { id: 19, animal: "Mouse3" },
+        { id: 20, animal: "Mouse4" }
+      ];
 
     const [myVal, setMyVal] = useState('');
 
@@ -46,10 +63,16 @@ export function MyComp() {
 
             <div> {
                 myVal
-            } </div> )
+            } </div> 
 
-        </div>)
+          <select size="10" multiple>
+            {animals.map(item => (
+              <option key={item.id}>{item.animal}</option>
+            ))}
+          </select>
+        </div>
+)
 };
 
-export default App;
+export default MyComp;
 
